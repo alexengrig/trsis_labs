@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Remove book</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="/static/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>Remove book</h1>
+<h2>Book is removed:</h2>
+<p><b>Name: </b><span th:text="${book.name}"></span></p>
+<p><b>Author: </b><span th:text="${book.author}"></span></p>
+<p><b>Year: </b><span th:text="${book.year}"></span></p>
+<a href="/books">Go to books</a>
+</body>
+</html>

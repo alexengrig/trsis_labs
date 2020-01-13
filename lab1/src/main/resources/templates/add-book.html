@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add book</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="/static/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>Add book</h1>
+<p><b>Name: </b><span th:text="${book.name}"></span></p>
+<p><b>Author: </b><span th:text="${book.author}"></span></p>
+<p><b>Year: </b><span th:text="${book.year}"></span></td></p>
+<a href="/books">Go to books</a>
+</body>
+</html>

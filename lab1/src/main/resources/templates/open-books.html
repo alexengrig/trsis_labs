@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Books</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="/static/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>Books</h1>
+<h2>Add new book:</h2>
+<form method="post" action="/books/add">
+    <label>
+        <b>Name:</b>
+        <input type="text" name="name">
+    </label>
+    <label>
+        <b>Author:</b>
+        <input type="text" name="author">
+    </label>
+    <label>
+        <b>Year:</b>
+        <input type="number" name="year">
+    </label>
+    <button type="submit">Add to list</button>
+</form>
+<h2>Book list:</h2>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Year</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${books.empty}">
+            <td colspan="4">No books available</td>
+        </tr>
+        <tr th:each="book : ${books}">
+            <td><span th:text="${book.name}"></span></td>
+            <td><span th:text="${book.author}"></span></td>
+            <td><span th:text="${book.year}"></span></td>
+            <td>
+                <a th:href="@{'/books/open/'+ ${book.id}}">Open</a>
+                <a th:href="@{'/books/edit/'+ ${book.id}}">Edit</a>
+                <a th:href="@{'/books/remove/'+ ${book.id}}">Remove</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
