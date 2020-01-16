@@ -25,12 +25,12 @@ public class BookController {
     }
 
     @PostMapping
-    public ResponseEntity<?> saveBook(Book book) {
+    public ResponseEntity<?> saveBook(@RequestBody Book book) {
         return ResponseEntity.ok(bookService.save(book));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateBook(@PathVariable Integer id, Book book) {
+    public ResponseEntity<?> updateBook(@PathVariable Integer id, @RequestBody Book book) {
         return ResponseEntity.ok(bookService.updateById(id, book));
     }
 
