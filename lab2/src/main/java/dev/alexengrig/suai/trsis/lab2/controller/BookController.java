@@ -1,4 +1,4 @@
-package dev.alexengrig.suai.trsis.lab2;
+package dev.alexengrig.suai.trsis.lab2.controller;
 
 import dev.alexengrig.suai.trsis.lab2.domain.Book;
 import dev.alexengrig.suai.trsis.lab2.service.BookService;
