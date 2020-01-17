@@ -1,0 +1,13 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+hr {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
