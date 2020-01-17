@@ -12,6 +12,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
+import java.util.Arrays;
+
 @Slf4j
 @Configuration
 @EnableWebSecurity
@@ -25,7 +27,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         .password("user")
                         .roles("USER")
                         .build();
-        return new InMemoryUserDetailsManager(user);
+        UserDetails admin =
+                User.withDefaultPasswordEncoder()
+                        .username("admin")
+                        .password("admin")
+                        .roles("ADMIN")
+                        .build();
+        return new InMemoryUserDetailsManager(Arrays.asList(user, admin));
     }
 
     @Override
